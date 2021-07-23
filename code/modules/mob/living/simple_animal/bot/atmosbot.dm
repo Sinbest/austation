@@ -53,6 +53,7 @@
 	var/last_barrier_tick
 	//Gasses
 	var/list/gasses = list(
+<<<<<<< HEAD
 		/datum/gas/bz = 1,
 		/datum/gas/carbon_dioxide = 1,
 		/datum/gas/hypernoblium = 1,
@@ -64,6 +65,19 @@
 		/datum/gas/stimulum = 0,
 		/datum/gas/tritium = 1,
 		/datum/gas/water_vapor = 0,
+=======
+		GAS_BZ = 1,
+		GAS_CO2 = 1,
+		GAS_HYPERNOB = 1,
+		GAS_MIASMA = 1,
+		GAS_NITROUS = 1,
+		GAS_NITRYL = 1,
+		GAS_PLASMA = 1,
+		GAS_PLUOXIUM = 0,
+		GAS_STIMULUM = 0,
+		GAS_TRITIUM = 1,
+		GAS_H2O = 0,
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 	)
 	//Tank type
 	var/tank_type = /obj/item/tank/internals/oxygen/empty

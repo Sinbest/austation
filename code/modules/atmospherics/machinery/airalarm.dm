@@ -89,6 +89,7 @@
 	var/list/TLV = list( // Breathable air.
 		"pressure"					= new/datum/tlv(ONE_ATMOSPHERE * 0.8, ONE_ATMOSPHERE*  0.9, ONE_ATMOSPHERE * 1.1, ONE_ATMOSPHERE * 1.2), // kPa. Values are min2, min1, max1, max2
 		"temperature"				= new/datum/tlv(T0C, T0C+10, T0C+40, T0C+66),
+<<<<<<< HEAD
 		/datum/gas/oxygen			= new/datum/tlv(16, 19, 135, 140), // Partial pressure, kpa
 		/datum/gas/nitrogen			= new/datum/tlv(-1, -1, 1000, 1000),
 		/datum/gas/carbon_dioxide	= new/datum/tlv(-1, -1, 5, 10),
@@ -102,12 +103,28 @@
 		/datum/gas/stimulum			= new/datum/tlv/dangerous,
 		/datum/gas/nitryl			= new/datum/tlv/dangerous,
 		/datum/gas/pluoxium			= new/datum/tlv(-1, -1, 1000, 1000) // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
+=======
+		GAS_O2			= new/datum/tlv(16, 19, 40, 50), // Partial pressure, kpa
+		GAS_N2			= new/datum/tlv(-1, -1, 1000, 1000),
+		GAS_CO2	= new/datum/tlv(-1, -1, 5, 10),
+		GAS_MIASMA			= new/datum/tlv/(-1, -1, 15, 30),
+		GAS_PLASMA			= new/datum/tlv/dangerous,
+		GAS_NITROUS	= new/datum/tlv/dangerous,
+		GAS_BZ				= new/datum/tlv/dangerous,
+		GAS_HYPERNOB		= new/datum/tlv(-1, -1, 1000, 1000), // Hyper-Noblium is inert and nontoxic
+		GAS_H2O		= new/datum/tlv/dangerous,
+		GAS_TRITIUM			= new/datum/tlv/dangerous,
+		GAS_STIMULUM			= new/datum/tlv/dangerous,
+		GAS_NITRYL			= new/datum/tlv/dangerous,
+		GAS_PLUOXIUM			= new/datum/tlv(-1, -1, 5, 6), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 	)
 
 /obj/machinery/airalarm/server // No checks here.
 	TLV = list(
 		"pressure"					= new/datum/tlv/no_checks,
 		"temperature"				= new/datum/tlv/no_checks,
+<<<<<<< HEAD
 		/datum/gas/oxygen			= new/datum/tlv/no_checks,
 		/datum/gas/nitrogen			= new/datum/tlv/no_checks,
 		/datum/gas/carbon_dioxide	= new/datum/tlv/no_checks,
@@ -121,12 +138,28 @@
 		/datum/gas/stimulum			= new/datum/tlv/no_checks,
 		/datum/gas/nitryl			= new/datum/tlv/no_checks,
 		/datum/gas/pluoxium			= new/datum/tlv/no_checks
+=======
+		GAS_O2			= new/datum/tlv/no_checks,
+		GAS_N2			= new/datum/tlv/no_checks,
+		GAS_CO2	= new/datum/tlv/no_checks,
+		GAS_MIASMA			= new/datum/tlv/no_checks,
+		GAS_PLASMA			= new/datum/tlv/no_checks,
+		GAS_NITROUS	= new/datum/tlv/no_checks,
+		GAS_BZ				= new/datum/tlv/no_checks,
+		GAS_HYPERNOB		= new/datum/tlv/no_checks,
+		GAS_H2O		= new/datum/tlv/no_checks,
+		GAS_TRITIUM			= new/datum/tlv/no_checks,
+		GAS_STIMULUM			= new/datum/tlv/no_checks,
+		GAS_NITRYL			= new/datum/tlv/no_checks,
+		GAS_PLUOXIUM			= new/datum/tlv/no_checks
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 	)
 
 /obj/machinery/airalarm/kitchen_cold_room // Kitchen cold rooms start off at -20°C or 253.15°K.
 	TLV = list(
 		"pressure"					= new/datum/tlv(ONE_ATMOSPHERE * 0.8, ONE_ATMOSPHERE*  0.9, ONE_ATMOSPHERE * 1.1, ONE_ATMOSPHERE * 1.2), // kPa
 		"temperature"				= new/datum/tlv(T0C-273.15, T0C-80, T0C-10, T0C+10),
+<<<<<<< HEAD
 		/datum/gas/oxygen			= new/datum/tlv(16, 19, 135, 140), // Partial pressure, kpa
 		/datum/gas/nitrogen			= new/datum/tlv(-1, -1, 1000, 1000),
 		/datum/gas/carbon_dioxide	= new/datum/tlv(-1, -1, 5, 10),
@@ -140,6 +173,21 @@
 		/datum/gas/stimulum			= new/datum/tlv/dangerous,
 		/datum/gas/nitryl			= new/datum/tlv/dangerous,
 		/datum/gas/pluoxium			= new/datum/tlv(-1, -1, 1000, 1000) // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
+=======
+		GAS_O2			= new/datum/tlv(16, 19, 135, 140), // Partial pressure, kpa
+		GAS_N2			= new/datum/tlv(-1, -1, 1000, 1000),
+		GAS_CO2	= new/datum/tlv(-1, -1, 5, 10),
+		GAS_MIASMA			= new/datum/tlv/(-1, -1, 2, 5),
+		GAS_PLASMA			= new/datum/tlv/dangerous,
+		GAS_NITROUS	= new/datum/tlv/dangerous,
+		GAS_BZ				= new/datum/tlv/dangerous,
+		GAS_HYPERNOB		= new/datum/tlv(-1, -1, 1000, 1000), // Hyper-Noblium is inert and nontoxic
+		GAS_H2O		= new/datum/tlv/dangerous,
+		GAS_TRITIUM			= new/datum/tlv/dangerous,
+		GAS_STIMULUM			= new/datum/tlv/dangerous,
+		GAS_NITRYL			= new/datum/tlv/dangerous,
+		GAS_PLUOXIUM			= new/datum/tlv(-1, -1, 1000, 1000) // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 	)
 
 /obj/machinery/airalarm/unlocked
@@ -522,6 +570,7 @@
 				send_signal(device_id, list(
 					"power" = 1,
 					"set_filters" = list(
+<<<<<<< HEAD
 						/datum/gas/carbon_dioxide,
 						/datum/gas/miasma,
 						/datum/gas/plasma,
@@ -533,6 +582,19 @@
 						/datum/gas/bz,
 						/datum/gas/stimulum,
 						/datum/gas/pluoxium
+=======
+						GAS_CO2,
+						GAS_MIASMA,
+						GAS_PLASMA,
+						GAS_H2O,
+						GAS_HYPERNOB,
+						GAS_NITROUS,
+						GAS_NITRYL,
+						GAS_TRITIUM,
+						GAS_BZ,
+						GAS_STIMULUM,
+						GAS_PLUOXIUM
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 					),
 					"scrubbing" = 1,
 					"widenet" = 1

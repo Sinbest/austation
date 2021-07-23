@@ -388,8 +388,13 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		tritiumcomp = max(removed.get_moles(/datum/gas/tritium)/combined_gas, 0)
 		bzcomp = max(removed.get_moles(/datum/gas/bz)/combined_gas, 0)
 
+<<<<<<< HEAD
 		n2ocomp = max(removed.get_moles(/datum/gas/nitrous_oxide)/combined_gas, 0)
 		n2comp = max(removed.get_moles(/datum/gas/nitrogen)/combined_gas, 0)
+=======
+		n2ocomp = max(removed.get_moles(GAS_NITROUS)/combined_gas, 0)
+		n2comp = max(removed.get_moles(GAS_N2)/combined_gas, 0)
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 
 		if(pluoxiumcomp >= 15)
 			pluoxiumbonus = 1	//Just to be safe I don't want to remove pluoxium

@@ -89,7 +89,11 @@
 /datum/gas_reaction/nitrous_decomp/init_reqs()
 	min_requirements = list(
 		"TEMP" = N2O_DECOMPOSITION_MIN_ENERGY,
+<<<<<<< HEAD
 		/datum/gas/nitrous_oxide = MINIMUM_MOLE_COUNT
+=======
+		GAS_NITROUS = MINIMUM_MOLE_COUNT
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 	)
 
 /datum/gas_reaction/nitrous_decomp/react(datum/gas_mixture/air, datum/holder)
@@ -99,8 +103,13 @@
 	var/burned_fuel = 0
 
 
+<<<<<<< HEAD
 	burned_fuel = max(0,0.00002*(temperature-(0.00001*(temperature**2))))*air.get_moles(/datum/gas/nitrous_oxide)
 	air.set_moles(/datum/gas/nitrous_oxide, air.get_moles(/datum/gas/nitrous_oxide) - burned_fuel)
+=======
+	burned_fuel = max(0,0.00002*(temperature-(0.00001*(temperature**2))))*air.get_moles(GAS_NITROUS)
+	air.set_moles(GAS_NITROUS, air.get_moles(GAS_NITROUS) - burned_fuel)
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 
 	if(burned_fuel)
 		energy_released += (N2O_DECOMPOSITION_ENERGY_RELEASED * burned_fuel)
@@ -379,8 +388,13 @@
 
 /datum/gas_reaction/bzformation/init_reqs()
 	min_requirements = list(
+<<<<<<< HEAD
 		/datum/gas/nitrous_oxide = 10,
 		/datum/gas/plasma = 10
+=======
+		GAS_NITROUS = 10,
+		GAS_PLASMA = 10
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 	)
 
 
@@ -388,6 +402,7 @@
 	var/temperature = air.return_temperature()
 	var/pressure = air.return_pressure()
 	var/old_heat_capacity = air.heat_capacity()
+<<<<<<< HEAD
 	var/reaction_efficency = min(1/((pressure/(0.5*ONE_ATMOSPHERE))*(max(air.get_moles(/datum/gas/plasma)/air.get_moles(/datum/gas/nitrous_oxide),1))),air.get_moles(/datum/gas/nitrous_oxide),air.get_moles(/datum/gas/plasma)/2)
 	var/energy_released = 2*reaction_efficency*FIRE_CARBON_ENERGY_RELEASED
 	if ((air.get_moles(/datum/gas/nitrous_oxide) - reaction_efficency < 0 )|| (air.get_moles(/datum/gas/plasma) - (2*reaction_efficency) < 0) || energy_released <= 0) //Shouldn't produce gas from nothing.
@@ -398,6 +413,18 @@
 		air.adjust_moles(/datum/gas/oxygen, min(pressure,1))
 	air.adjust_moles(/datum/gas/nitrous_oxide, -reaction_efficency)
 	air.adjust_moles(/datum/gas/plasma, -2*reaction_efficency)
+=======
+	var/reaction_efficency = min(1/((pressure/(0.5*ONE_ATMOSPHERE))*(max(air.get_moles(GAS_PLASMA)/air.get_moles(GAS_NITROUS),1))),air.get_moles(GAS_NITROUS),air.get_moles(GAS_PLASMA)/2)
+	var/energy_released = 2*reaction_efficency*FIRE_CARBON_ENERGY_RELEASED
+	if ((air.get_moles(GAS_NITROUS) - reaction_efficency < 0 )|| (air.get_moles(GAS_PLASMA) - (2*reaction_efficency) < 0) || energy_released <= 0) //Shouldn't produce gas from nothing.
+		return NO_REACTION
+	air.adjust_moles(GAS_BZ, reaction_efficency)
+	if(reaction_efficency == air.get_moles(GAS_NITROUS))
+		air.adjust_moles(GAS_BZ, -min(pressure,1))
+		air.adjust_moles(GAS_O2, min(pressure,1))
+	air.adjust_moles(GAS_NITROUS, -reaction_efficency)
+	air.adjust_moles(GAS_PLASMA, -2*reaction_efficency)
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 
 	SSresearch.science_tech.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min((reaction_efficency**2)*BZ_RESEARCH_SCALE,BZ_RESEARCH_MAX_AMOUNT))
 

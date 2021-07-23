@@ -46,8 +46,13 @@
 	force = 10
 
 /obj/item/tank/internals/anesthetic/populate_gas()
+<<<<<<< HEAD
 	air_contents.set_moles(/datum/gas/oxygen, (3*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * O2STANDARD)
 	air_contents.set_moles(/datum/gas/nitrous_oxide, (3*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * N2STANDARD)
+=======
+	air_contents.set_moles(GAS_O2, (3*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * O2STANDARD)
+	air_contents.set_moles(GAS_NITROUS, (3*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * N2STANDARD)
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 
 /*
  * Air
@@ -194,5 +199,10 @@
 	volume = 1
 
 /obj/item/tank/internals/emergency_oxygen/clown/populate_gas()
+<<<<<<< HEAD
 	air_contents.set_moles(/datum/gas/oxygen, (9.99*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 	air_contents.set_moles(/datum/gas/nitrous_oxide, (0.01*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+=======
+	air_contents.set_moles(GAS_O2, (9.99*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	air_contents.set_moles(GAS_NITROUS, (0.01*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)

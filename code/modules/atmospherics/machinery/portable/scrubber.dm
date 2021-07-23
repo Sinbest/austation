@@ -10,7 +10,11 @@
 	var/overpressure_m = 80
 	volume = 1000
 
+<<<<<<< HEAD
 	var/list/scrubbing = list(/datum/gas/plasma, /datum/gas/carbon_dioxide, /datum/gas/nitrous_oxide, /datum/gas/bz, /datum/gas/nitryl, /datum/gas/tritium, /datum/gas/hypernoblium, /datum/gas/water_vapor)
+=======
+	var/list/scrubbing = list(GAS_PLASMA, GAS_CO2, GAS_NITROUS, GAS_BZ, GAS_NITRYL, GAS_TRITIUM, GAS_HYPERNOB, GAS_H2O)
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 
 /obj/machinery/portable_atmospherics/scrubber/Destroy()
 	var/turf/T = get_turf(src)

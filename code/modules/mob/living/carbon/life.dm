@@ -231,8 +231,13 @@
 		clear_alert("too_much_tox")
 
 	//NITROUS OXIDE
+<<<<<<< HEAD
 	if(breath.get_moles(/datum/gas/nitrous_oxide))
 		var/SA_partialpressure = (breath.get_moles(/datum/gas/nitrous_oxide)/breath.total_moles())*breath_pressure
+=======
+	if(breath.get_moles(GAS_NITROUS))
+		var/SA_partialpressure = (breath.get_moles(GAS_NITROUS)/breath.total_moles())*breath_pressure
+>>>>>>> 32fcb4a3a2... Fixes n2o being replaced with nitryl in multiple cases (#4900)
 		if(SA_partialpressure > SA_para_min)
 			Unconscious(60)
 			if(SA_partialpressure > SA_sleep_min)
