@@ -21,3 +21,9 @@ export NODE_VERSION_PRECISE=12.20.0
 
 # SpacemanDMM git tag
 export SPACEMAN_DMM_VERSION=suite-1.7
+<<<<<<< HEAD
+=======
+
+#auxmos version
+export AUXMOS_VERSION=0.2.3
+>>>>>>> 20ed0e9732... Bump auxmos to 0.2.3, fixes fusion (#4927)
